@@ -3,7 +3,6 @@ const colors = require('colors')
 const { crear, getListado, actualizar, borrar } = require('./por-hacer/por-hacer')
 
 let comando = argv._[0]
-let comando2 = argv._[1]
 
 switch (comando) {
   case 'crear':
