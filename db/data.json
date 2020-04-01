@@ -1,1 +1,1 @@
-[{"descripcion":"Pasear al perro","completado":false},{"descripcion":"Salir de casa","completado":true}]
+[{"descripcion":"Pasear al perro","completado":false},{"descripcion":"Salir de casa","completado":"false"},{"descripcion":"Comer","completado":"true"},{"descripcion":"Ir al supermercado","completado":true}]

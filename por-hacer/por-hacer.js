@@ -31,9 +31,32 @@ const crear = (descripcion) => {
   return porHacer
 }
 
-const getListado = () => {
+const filtrarListado = (boolean, string) => {
+  let nuevaLista = listadoPorHacer.filter(tarea => tarea.completado === boolean || tarea.completado === string)
+
+  if (nuevaLista.length <= 0) {
+    console.log('No hay tareas realizadas')
+    nuevaLista = []
+  }
+
+  return nuevaLista
+}
+
+const getListado = (todos) => {
+
   cargarDB()
-  return listadoPorHacer
+
+  switch (todos) {
+    case 'completados':
+      return filtrarListado(true, "true")
+    case 'incompletos':
+      return filtrarListado(false, "false")
+    case 'todos':
+      return listadoPorHacer
+    default:
+      console.log('Comando incorrecto. Vuelva a intentarlo con true o false')
+      return []
+  }
 }
 
 const actualizar = (descripcion, completado = true) => {

@@ -3,6 +3,7 @@ const colors = require('colors')
 const { crear, getListado, actualizar, borrar } = require('./por-hacer/por-hacer')
 
 let comando = argv._[0]
+let comando2 = argv._[1]
 
 switch (comando) {
   case 'crear':
@@ -10,10 +11,11 @@ switch (comando) {
     console.log(tarea)
     break
   case 'listar':
-    let listado = getListado()
+    let listado = getListado(argv.todos)
+
+    console.log('========Tareas============'.green)
 
     for (let tarea of listado) {
-      console.log('========Por Hacer============'.green)
       console.log('Tarea: ', tarea.descripcion)
       console.log('Estado: ', tarea.completado)
       console.log('===================='.green)
